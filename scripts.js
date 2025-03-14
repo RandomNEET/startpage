@@ -8,11 +8,23 @@
 const searchInput = document.querySelector("#searchbar > input")
 const searchButton = document.querySelector("#searchbar > button")
 
-const lookup = {"/":"/","deepl":"https://deepl.com/","reddit":"https://reddit.com/"}
+const lookup = {
+  "gpt":"https://chat.openai.com/",
+  "dl":"https://deepl.com/",
+  "gh":"https://github.com/",
+  "so":"https://stackoverflow.com/",
+  "yt":"https://www.youtube.com/",
+  "bi":"https://bilibili.com/",
+  "rd":"https://reddit.com/",
+  "tw":"https://twitter.com/",
+  "tg":"https://web.telegram.org/",
+  "st":"https://store.steampowered.com/"
+}
+
 const engine = "duckduckgo"
 const engineUrls = {
-  deepl: "https://www.deepl.com/translator#-/-/{query}",
   duckduckgo: "https://duckduckgo.com/?q={query}",
+  deepl: "https://www.deepl.com/translator#-/-/{query}",
   ecosia: "https://www.ecosia.org/search?q={query}",
   google: "https://www.google.com/search?q={query}",
   startpage: "https://www.startpage.com/search?q={query}",
@@ -48,7 +60,81 @@ searchButton.onclick = search
  * inject bookmarks into html
  */
 
-const bookmarks = [{"id":"F82in0q62lq4UE8C","label":"dev","bookmarks":[{"id":"wpz6zFbNM20qNK5Q","label":"github","url":"https://github.com"},{"id":"pkoGU7B7aElOALVh","label":"stackoverflow","url":"https://stackoverflow.com"},{"id":"xbYhdCpzNHvO76gA","label":"chatgpt","url":"https://chat.openai.com/"}]},{"id":"MgWePOfce5FJiOdi","label":"video","bookmarks":[{"id":"BFSc6YFtKmc8py7t","label":"youtube","url":"https://www.youtube.com/"},{"id":"1LtGuoTu1p2YRfzh","label":"bilibili","url":"https://bilibili.com/"}]},{"id":"6rHz2iOVNWVJ0evH","label":"social","bookmarks":[{"id":"qa3WIKY2KrYKTty0","label":"reddit","url":"https://www.reddit.com/"},{"id":"DjFc2OZmFV5qBAqW","label":"twitter","url":"https://twitter.com/"},{"id":"NGfWhik2alKk2nXg","label":"telegram","url":"https://web.telegram.org/"}]},{"id":"wgbHHywd8d3MX2hk","label":"game","bookmarks":[{"id":"bATX1DhdUgfoF7mr","label":"steam","url":"https://store.steampowered.com/"},{"id":"BRkB4INBZ5eJMGXu","label":"steamdb","url":"https://steamdb.info/"}]}]
+const bookmarks = [
+  {
+    "id":"dev",
+    "label":"dev",
+    "bookmarks":[
+      {
+        "id":"dev-github",
+        "label":"github",
+        "url":"https://github.com/"
+      },
+      {"id":"dev-stackoverflow",
+        "label":"stackoverflow",
+        "url":"https://stackoverflow.com/"
+      },
+      {
+        "id":"dev-chatgpt",
+        "label":"chatgpt",
+        "url":"https://chat.openai.com/"
+      }
+    ]
+  },
+  {
+    "id":"video",
+    "label":"video",
+    "bookmarks":[
+      {
+        "id":"video-youtube",
+        "label":"youtube",
+        "url":"https://www.youtube.com/"
+      },
+      {
+        "id":"video-bilibili",
+        "label":"bilibili",
+        "url":"https://bilibili.com/"
+      }
+    ]
+  },
+  {
+    "id":"social",
+    "label":"social",
+    "bookmarks":[
+      {
+        "id":"social-reddit",
+        "label":"reddit",
+        "url":"https://www.reddit.com/"
+      },
+      {
+        "id":"social-twitter",
+        "label":"twitter",
+        "url":"https://twitter.com/"
+      },
+      {
+        "id":"social-telegram",
+        "label":"telegram",
+        "url":"https://web.telegram.org/"
+      }
+    ]
+  },
+  {
+    "id":"game",
+    "label":"game",
+    "bookmarks":[
+      {
+        "id":"game-steam",
+        "label":"steam",
+        "url":"https://store.steampowered.com/"
+      },
+      {
+        "id":"game-steamdb",
+        "label":"steamdb",
+        "url":"https://steamdb.info/"
+      }
+    ]
+  }
+]
 
 const createGroupContainer = () => {
   const container = document.createElement("div")
