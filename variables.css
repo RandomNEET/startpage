@@ -1,0 +1,46 @@
+:root {
+  /** colors */
+  --color-name: custom;
+  --color-bg-shade: #181825;
+  --color-bg-base: #11111b;
+  --color-bg-surface: #1e1e2e;
+  --color-bg-highlight: #9399b2;
+  --color-fg-shade: #839AE4;
+  --color-fg-base: #585b70;
+  --color-fg-surface: #cdd6f4;
+  --color-fg-highlight: #cdd6f4;
+  --color-primary-bg: #181825;
+  --color-primary-base: #b4befe;
+  --color-primary-fg: #f38ba8;
+  --color-secondary-bg: #11111b;
+  --color-secondary-base: #A6ADC8;
+  --color-secondary-fg: #cba6f7;
+  --color-palette-red: #E06C75;
+  --color-palette-green: #98C379;
+  --color-palette-yellow: #E5C07B;
+  --color-palette-blue: #61AFEF;
+  --color-palette-purple: #C678DD;
+  --color-palette-cyan: #56B6C2;
+  --color-palette-orange: #FFBB7C;
+  
+  /** general */
+  --font-family: MesloLGL Nerd Font;
+  --font-size: 1;
+  --display-image: block;
+
+  /** surface */
+  --surface-maxWidth: 1100px;
+  --surface-shadow: 12px 12px 0px #181825;
+  --surface-borderRadius: 0px;
+
+  /** spacing */
+  --space-smallest: 0.125rem;
+  --space-small: 0.5rem;
+  --space-medium: 1rem;
+  --space-large: 1.5rem;
+  --space-largest: 3rem;
+
+  /** others */
+  --picture-size: 300px;
+  --group-count: 4;
+}
