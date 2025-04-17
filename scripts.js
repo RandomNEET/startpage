@@ -78,7 +78,7 @@ const bookmarks = [
       {
         "id":"dev-copilot",
         "label":"copilot",
-        "url":"https://chat.openai.com/"
+        "url":"https://copilot.microsoft.com/"
       }
     ]
   },
