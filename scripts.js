@@ -9,6 +9,7 @@ const searchInput = document.querySelector("#searchbar > input")
 const searchButton = document.querySelector("#searchbar > button")
 
 const lookup = {
+  "cp":"https://copilot.microsoft.com/",
   "gpt":"https://chat.openai.com/",
   "dl":"https://deepl.com/",
   "gh":"https://github.com/",
@@ -75,8 +76,8 @@ const bookmarks = [
         "url":"https://stackoverflow.com/"
       },
       {
-        "id":"dev-chatgpt",
-        "label":"chatgpt",
+        "id":"dev-copilot",
+        "label":"copilot",
         "url":"https://chat.openai.com/"
       }
     ]
