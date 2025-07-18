@@ -9,7 +9,7 @@ const searchInput = document.querySelector("#searchbar > input")
 const searchButton = document.querySelector("#searchbar > button")
 
 const lookup = {
-  "cp":"https://github.com/copilot/",
+  "cp":"https://copilot.github.com/",
   "gpt":"https://chat.openai.com/",
   "dl":"https://deepl.com/",
   "gh":"https://github.com/",
@@ -78,7 +78,7 @@ const bookmarks = [
       {
         "id":"dev-copilot",
         "label":"copilot",
-        "url":"https://github.com/copilot/"
+        "url":"https://copilot.github.com/"
       }
     ]
   },
