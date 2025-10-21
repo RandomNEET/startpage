@@ -5,24 +5,22 @@
  * Search function
  */
 
-const searchInput = document.querySelector("#searchbar > input")
-const searchButton = document.querySelector("#searchbar > button")
+const searchInput = document.querySelector("#searchbar > input");
+const searchButton = document.querySelector("#searchbar > button");
 
 const lookup = {
-  "cp":"https://copilot.github.com/",
-  "gpt":"https://chat.openai.com/",
-  "dl":"https://deepl.com/",
-  "gh":"https://github.com/",
-  "so":"https://stackoverflow.com/",
-  "yt":"https://www.youtube.com/",
-  "bi":"https://bilibili.com/",
-  "rd":"https://reddit.com/",
-  "tw":"https://twitter.com/",
-  "tg":"https://web.telegram.org/",
-  "st":"https://store.steampowered.com/"
-}
+  gh: "https://github.com/",
+  hn: "https://news.ycombinator.com/",
+  yt: "https://www.youtube.com/",
+  bi: "https://bilibili.com/",
+  rd: "https://reddit.com/",
+  tw: "https://twitter.com/",
+  rd: "https://reddit.com/",
+  cp: "https://copilot.github.com/",
+  gpt: "https://chatgpt.com/",
+};
 
-const engine = "duckduckgo"
+const engine = "duckduckgo";
 const engineUrls = {
   duckduckgo: "https://duckduckgo.com/?q={query}",
   deepl: "https://www.deepl.com/translator#-/-/{query}",
@@ -30,32 +28,32 @@ const engineUrls = {
   google: "https://www.google.com/search?q={query}",
   startpage: "https://www.startpage.com/search?q={query}",
   youtube: "https://www.youtube.com/results?q={query}",
-}
+};
 
-const isWebUrl = value => {
+const isWebUrl = (value) => {
   try {
-    const url = new URL(value)
-    return url.protocol === "http:" || url.protocol === "https:"
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
   } catch {
-    return false
+    return false;
   }
-}
+};
 
-const getTargetUrl = value => {
-  if (isWebUrl(value)) return value
-  if (lookup[value]) return lookup[value]
-  const url = engineUrls[engine] ?? engine
-  return url.replace("{query}", value)
-}
+const getTargetUrl = (value) => {
+  if (isWebUrl(value)) return value;
+  if (lookup[value]) return lookup[value];
+  const url = engineUrls[engine] ?? engine;
+  return url.replace("{query}", value);
+};
 
 const search = () => {
-  const value = searchInput.value
-  const targetUrl = getTargetUrl(value)
-  window.open(targetUrl, "_self")
-}
+  const value = searchInput.value;
+  const targetUrl = getTargetUrl(value);
+  window.open(targetUrl, "_self");
+};
 
-searchInput.onkeyup = event => event.key === "Enter" && search()
-searchButton.onclick = search
+searchInput.onkeyup = (event) => event.key === "Enter" && search();
+searchButton.onclick = search;
 
 /**
  * inject bookmarks into html
@@ -63,120 +61,113 @@ searchButton.onclick = search
 
 const bookmarks = [
   {
-    "id":"dev",
-    "label":"dev",
-    "bookmarks":[
+    id: "ai",
+    label: "ai",
+    bookmarks: [
       {
-        "id":"dev-github",
-        "label":"github",
-        "url":"https://github.com/"
-      },
-      {"id":"dev-stackoverflow",
-        "label":"stackoverflow",
-        "url":"https://stackoverflow.com/"
+        id: "ai-copilot",
+        label: "copilot",
+        url: "https://copilot.github.com/",
       },
       {
-        "id":"dev-copilot",
-        "label":"copilot",
-        "url":"https://copilot.github.com/"
-      }
-    ]
+        id: "ai-chatgpt",
+        label: "chatgpt",
+        url: "https://chatgpt.com/",
+      },
+    ],
   },
   {
-    "id":"video",
-    "label":"video",
-    "bookmarks":[
+    id: "dev",
+    label: "dev",
+    bookmarks: [
       {
-        "id":"video-youtube",
-        "label":"youtube",
-        "url":"https://www.youtube.com/"
+        id: "dev-github",
+        label: "github",
+        url: "https://github.com/",
       },
       {
-        "id":"video-bilibili",
-        "label":"bilibili",
-        "url":"https://bilibili.com/"
-      }
-    ]
+        id: "dev-hackernews",
+        label: "hackernews",
+        url: "https://news.ycombinator.com/",
+      },
+    ],
   },
   {
-    "id":"social",
-    "label":"social",
-    "bookmarks":[
+    id: "watch",
+    label: "watch",
+    bookmarks: [
       {
-        "id":"social-reddit",
-        "label":"reddit",
-        "url":"https://www.reddit.com/"
+        id: "watch-youtube",
+        label: "youtube",
+        url: "https://www.youtube.com/",
       },
       {
-        "id":"social-twitter",
-        "label":"twitter",
-        "url":"https://twitter.com/"
+        id: "watch-bilibili",
+        label: "bilibili",
+        url: "https://bilibili.com/",
       },
-      {
-        "id":"social-telegram",
-        "label":"telegram",
-        "url":"https://web.telegram.org/"
-      }
-    ]
+    ],
   },
   {
-    "id":"game",
-    "label":"game",
-    "bookmarks":[
+    id: "social",
+    label: "social",
+    bookmarks: [
       {
-        "id":"game-steam",
-        "label":"steam",
-        "url":"https://store.steampowered.com/"
+        id: "social-reddit",
+        label: "reddit",
+        url: "https://www.reddit.com/",
       },
       {
-        "id":"game-steamdb",
-        "label":"steamdb",
-        "url":"https://steamdb.info/"
-      }
-    ]
-  }
-]
+        id: "social-twitter",
+        label: "twitter",
+        url: "https://twitter.com/",
+      },
+    ],
+  },
+];
 
 const createGroupContainer = () => {
-  const container = document.createElement("div")
-  container.className = "bookmark-group"
-  return container
-}
+  const container = document.createElement("div");
+  container.className = "bookmark-group";
+  return container;
+};
 
-const createGroupTitle = title => {
-  const h2 = document.createElement("h2")
-  h2.innerHTML = title
-  return h2
-}
+const createGroupTitle = (title) => {
+  const h2 = document.createElement("h2");
+  h2.innerHTML = title;
+  return h2;
+};
 
 const createBookmark = ({ label, url }) => {
-  const li = document.createElement("li")
-  const a = document.createElement("a")
-  a.href = url
-  a.innerHTML = label
-  li.append(a)
-  return li
-}
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = url;
+  a.innerHTML = label;
+  li.append(a);
+  return li;
+};
 
-const createBookmarkList = bookmarks => {
-  const ul = document.createElement("ul")
-  bookmarks.map(createBookmark).forEach(li => ul.append(li))
-  return ul
-}
+const createBookmarkList = (bookmarks) => {
+  const ul = document.createElement("ul");
+  bookmarks.map(createBookmark).forEach((li) => ul.append(li));
+  return ul;
+};
 
 const createGroup = ({ label, bookmarks }) => {
-  const container = createGroupContainer()
-  const title = createGroupTitle(label)
-  const bookmarkList = createBookmarkList(bookmarks)
-  container.append(title)
-  container.append(bookmarkList)
-  return container
-}
+  const container = createGroupContainer();
+  const title = createGroupTitle(label);
+  const bookmarkList = createBookmarkList(bookmarks);
+  container.append(title);
+  container.append(bookmarkList);
+  return container;
+};
 
 const injectBookmarks = () => {
-  const bookmarksContainer = document.getElementById("bookmarks")
-  bookmarksContainer.append()
-  bookmarks.map(createGroup).forEach(group => bookmarksContainer.append(group))
-}
+  const bookmarksContainer = document.getElementById("bookmarks");
+  bookmarksContainer.append();
+  bookmarks
+    .map(createGroup)
+    .forEach((group) => bookmarksContainer.append(group));
+};
 
-injectBookmarks()
+injectBookmarks();
