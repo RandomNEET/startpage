@@ -23,10 +23,7 @@ const lookup = {
 const engine = "duckduckgo";
 const engineUrls = {
   duckduckgo: "https://duckduckgo.com/?q={query}",
-  deepl: "https://www.deepl.com/translator#-/-/{query}",
-  ecosia: "https://www.ecosia.org/search?q={query}",
   google: "https://www.google.com/search?q={query}",
-  startpage: "https://www.startpage.com/search?q={query}",
   youtube: "https://www.youtube.com/results?q={query}",
 };
 
