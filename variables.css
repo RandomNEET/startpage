@@ -5,7 +5,7 @@
   --color-bg-base: #11111b;
   --color-bg-surface: #1e1e2e;
   --color-bg-highlight: #9399b2;
-  --color-fg-shade: #839AE4;
+  --color-fg-shade: #839ae4;
   --color-fg-base: #585b70;
   --color-fg-surface: #cdd6f4;
   --color-fg-highlight: #cdd6f4;
@@ -13,16 +13,16 @@
   --color-primary-base: #b4befe;
   --color-primary-fg: #f38ba8;
   --color-secondary-bg: #11111b;
-  --color-secondary-base: #A6ADC8;
+  --color-secondary-base: #a6adc8;
   --color-secondary-fg: #cba6f7;
-  --color-palette-red: #E06C75;
-  --color-palette-green: #98C379;
-  --color-palette-yellow: #E5C07B;
-  --color-palette-blue: #61AFEF;
-  --color-palette-purple: #C678DD;
-  --color-palette-cyan: #56B6C2;
-  --color-palette-orange: #FFBB7C;
-  
+  --color-palette-red: #e06c75;
+  --color-palette-green: #98c379;
+  --color-palette-yellow: #e5c07b;
+  --color-palette-blue: #61afef;
+  --color-palette-purple: #c678dd;
+  --color-palette-cyan: #56b6c2;
+  --color-palette-orange: #ffbb7c;
+
   /** general */
   --font-family: JetBrainsMono Nerd Font;
   --font-size: 1;

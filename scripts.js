@@ -9,15 +9,18 @@ const searchInput = document.querySelector("#searchbar > input");
 const searchButton = document.querySelector("#searchbar > button");
 
 const lookup = {
+  ib: "https://webmail.migadu.com/",
   gh: "https://github.com/",
   hn: "https://news.ycombinator.com/",
   yt: "https://www.youtube.com/",
   bi: "https://bilibili.com/",
   rd: "https://reddit.com/",
   tw: "https://twitter.com/",
-  rd: "https://reddit.com/",
-  cp: "https://copilot.github.com/",
+  st: "https://store.steampowered.com/",
+  cld: "https://claude.ai/",
+  gmn: "https://gemini.google.com/",
   gpt: "https://chatgpt.com/",
+  cop: "https://copilot.github.com/",
 };
 
 const engine = "duckduckgo";
@@ -58,48 +61,37 @@ searchButton.onclick = search;
 
 const bookmarks = [
   {
-    id: "ai",
-    label: "ai",
+    id: "daily",
+    label: "daily",
     bookmarks: [
       {
-        id: "ai-copilot",
-        label: "copilot",
-        url: "https://copilot.github.com/",
+        id: "daily-inbox",
+        label: "inbox",
+        url: "https://webmail.migadu.com/",
       },
       {
-        id: "ai-chatgpt",
-        label: "chatgpt",
-        url: "https://chatgpt.com/",
-      },
-    ],
-  },
-  {
-    id: "dev",
-    label: "dev",
-    bookmarks: [
-      {
-        id: "dev-github",
+        id: "daily-github",
         label: "github",
         url: "https://github.com/",
       },
       {
-        id: "dev-hackernews",
+        id: "daily-hackernews",
         label: "hackernews",
         url: "https://news.ycombinator.com/",
       },
     ],
   },
   {
-    id: "watch",
-    label: "watch",
+    id: "media",
+    label: "media",
     bookmarks: [
       {
-        id: "watch-youtube",
+        id: "media-youtube",
         label: "youtube",
         url: "https://www.youtube.com/",
       },
       {
-        id: "watch-bilibili",
+        id: "media-bilibili",
         label: "bilibili",
         url: "https://bilibili.com/",
       },
@@ -118,6 +110,32 @@ const bookmarks = [
         id: "social-twitter",
         label: "twitter",
         url: "https://twitter.com/",
+      },
+    ],
+  },
+  {
+    id: "ai",
+    label: "ai",
+    bookmarks: [
+      {
+        id: "ai-claude",
+        label: "claude",
+        url: "https://claude.ai/",
+      },
+      {
+        id: "ai-gemini",
+        label: "gemini",
+        url: "https://gemini.google.com/",
+      },
+      {
+        id: "ai-chatgpt",
+        label: "chatgpt",
+        url: "https://chatgpt.com/",
+      },
+      {
+        id: "ai-copilot",
+        label: "copilot",
+        url: "https://copilot.github.com/",
       },
     ],
   },
