@@ -9,7 +9,7 @@ const searchInput = document.querySelector("#searchbar > input");
 const searchButton = document.querySelector("#searchbar > button");
 
 const lookup = {
-  ib: "https://webmail.migadu.com/",
+  em: "https://webmail.migadu.com/",
   gh: "https://github.com/",
   hn: "https://news.ycombinator.com/",
   yt: "https://www.youtube.com/",
@@ -17,8 +17,8 @@ const lookup = {
   rd: "https://reddit.com/",
   tw: "https://twitter.com/",
   st: "https://store.steampowered.com/",
-  cld: "https://claude.ai/",
   gmn: "https://gemini.google.com/",
+  cld: "https://claude.ai/",
   gpt: "https://chatgpt.com/",
   cop: "https://copilot.github.com/",
 };
@@ -118,14 +118,14 @@ const bookmarks = [
     label: "ai",
     bookmarks: [
       {
-        id: "ai-claude",
-        label: "claude",
-        url: "https://claude.ai/",
-      },
-      {
         id: "ai-gemini",
         label: "gemini",
         url: "https://gemini.google.com/",
+      },
+      {
+        id: "ai-claude",
+        label: "claude",
+        url: "https://claude.ai/",
       },
       {
         id: "ai-chatgpt",
